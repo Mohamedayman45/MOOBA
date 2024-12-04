@@ -7,12 +7,15 @@ const shopRoutes = require("./routes/shop.js");
 
 const app = express();
 
+app.set('view engine' , 'ejs')
+app.set('views'  , 'views')
+
 app.use("/admin", adminRoutes);
 app.use(shopRoutes);
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use((req, res, next) => {
-  res.status(404).sendFile(path.join(__dirname, "views", "page404.html"));
+  res.status(404).render('page404', {pageTitle: "page404"});
 });
 
 app.listen(3000);

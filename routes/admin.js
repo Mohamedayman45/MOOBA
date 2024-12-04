@@ -6,8 +6,7 @@ const router = express.Router();
 router.use(bodyParser.urlencoded({ extended: false }));
 
 router.get("/add-product", (req, res, next) => {
-  console.log("in another middleware!");
-  res.sendFile(path.join(__dirname, "../", "views", "add-product.html"));
+  res.render('admin' , {pageTitle: 'admin page'});
 });
 
 router.post("/add-product", (req, res, next) => {
