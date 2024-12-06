@@ -35,3 +35,75 @@ body {
 .main-headr__item a.active {
   color: blueviolet;
 }
+.grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+
+.card {
+  width: 250px; 
+  background-color: #f8f8f8; 
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.card__header {
+  background-color: #0077ff; 
+  color: #fff;
+  padding: 0.5rem;
+}
+
+.product__title {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.car__image img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.card__content {
+  padding: 0.5rem 1rem;
+}
+
+.product__price {
+  font-size: 1.2rem;
+  color: #0077ff;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.product__description {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.car__action {
+  padding: 0.5rem 1rem;
+}
+
+.card__button {
+  background-color: #28a745; 
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.card__button:hover {
+  background-color: #218838;
+}
