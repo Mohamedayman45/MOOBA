@@ -8,13 +8,13 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.get("/add-product", (req, res, next) => {
   res.render('admin' , {pageTitle: 'admin page'});
 });
-
+products = [];
 router.post("/add-product", (req, res, next) => {
   if (req.body && Object.getPrototypeOf(req.body) === null) {
-    req.body = { ...req.body };
+    products.push({title: req.body.title});
   }
-  console.log(req.body);
+  console.log(products);
   res.redirect("/");
 });
 
-module.exports = router;
+module.exports = { router, products };
