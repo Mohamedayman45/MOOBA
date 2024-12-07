@@ -35,43 +35,56 @@ body {
 .main-headr__item a.active {
   color: blueviolet;
 }
-.grid {
+/* General Product Grid Styles */
+.product-grid {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center cards horizontally */
 }
 
+.product-card-wrapper {
+  flex: 0 1 300px; /* Fixed width for cards with ability to shrink */
+  max-width: 100%;
+}
 
+/* Card Styles */
 .card {
-  width: 250px; 
-  background-color: #f8f8f8; 
+  background-color: #f8f8f8;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
   text-align: center;
+  transition: transform 0.3s ease; /* Add hover scaling effect */
 }
 
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Header */
 .card__header {
-  background-color: #0077ff; 
+  background-color: #0077ff;
   color: #fff;
   padding: 0.5rem;
 }
 
 .product__title {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin: 0;
 }
 
-.car__image img {
+/* Image */
+.card__image img {
   width: 100%;
-  height: auto;
+  height: 250px; /* Fixed height for consistent layout */
+  object-fit: cover; /* Ensure image fits nicely within the container */
   border-bottom: 1px solid #ddd;
 }
 
+/* Content */
 .card__content {
   padding: 0.5rem 1rem;
 }
@@ -89,13 +102,15 @@ body {
   margin: 0.5rem 0;
 }
 
-.car__action {
+/* Actions */
+.card__actions {
   padding: 0.5rem 1rem;
 }
 
-.card__button {
-  background-color: #28a745; 
-  color: #fff;
+/* Button */
+.btn {
+  background-color: #28a745; /* Green background */
+  color: #fff; /* White text */
   border: none;
   border-radius: 5px;
   padding: 0.5rem 1rem;
@@ -104,6 +119,10 @@ body {
   font-size: 0.9rem;
 }
 
-.card__button:hover {
-  background-color: #218838;
+.btn:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+.btn-primary {
+  background-color: #28a745; /* Primary button color */
 }
