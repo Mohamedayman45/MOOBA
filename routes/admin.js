@@ -1,11 +1,18 @@
-const express = require("express");
-const productsController = require("../controllers/products");
-const bodyParser = require("body-parser");
+const path = require('path');
+
+const express = require('express');
+
+const adminController = require('../controllers/admin');
+
 const router = express.Router();
 
+// /admin/add-product => GET
+router.get('/add-product', adminController.getAddProduct);
 
-router.use(bodyParser.urlencoded({ extended: false }));
-router.get("/add-product", productsController.getAddproducts);
-router.post("/add-product", productsController.postAddProducts);
+// /admin/products => GET
+router.get('/products', adminController.getProducts);
 
-module.exports = router
+// /admin/add-product => POST
+router.post('/add-product', adminController.postAddProduct);
+
+module.exports = router;
