@@ -1,104 +1,41 @@
-# PostgreSQL Setup and Database Import Documentation
+# Setting Up MongoDB Compass
 
-This documentation explains how to create a PostgreSQL user named `darbAdmin`, a database named `stagingdatabase`, and import a `.sql` file into the database on your local machine.
+MongoDB Compass is a graphical user interface for MongoDB, allowing you to interact with your database in an easy and intuitive way. Follow the steps below to set up MongoDB Compass and connect to the database:
 
----
+## Step 1: Install MongoDB Compass
+1. Download MongoDB Compass from the [official MongoDB website](https://www.mongodb.com/products/compass).
+2. Install MongoDB Compass by following the instructions for your operating system.
 
-## **Step 1: Install PostgreSQL**
-If PostgreSQL is not installed on your machine, install it using the following steps:
+## Step 2: Get Your Connection String
+You'll need a MongoDB connection string to connect MongoDB Compass to your database. Below is an example string you can use, but make sure to replace the placeholder values with the actual credentials for your database:
 
-### **Ubuntu**:
-```bash
-sudo apt update
-sudo apt install postgresql postgresql-client
-```
+mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/<database-name>?retryWrites=true&w=majority
 
-### **Windows**:
-Download and install PostgreSQL from [https://www.postgresql.org/download/](https://www.postgresql.org/download/).
+javascript
+Copy code
 
----
+### Example Connection String
+Replace the `<username>`, `<password>`, `<cluster-name>`, and `<database-name>` with your specific database details.
 
-## **Step 2: Start the PostgreSQL Service**
-Ensure the PostgreSQL service is running:
+For example:
+mongodb+srv://admin:password123@cluster0.mongodb.net/mydatabase?retryWrites=true&w=majority
 
-### **Ubuntu**:
-```bash
-sudo systemctl start postgresql
-sudo systemctl enable postgresql
-```
+markdown
+Copy code
 
-### **Windows**:
-Start the PostgreSQL service from the Services Manager or via the PostgreSQL application.
+> **Note:** If your database is not hosted on MongoDB Atlas (cloud), use the local connection string format provided by your setup.
 
----
+## Step 3: Connect to Your Database
+1. Open MongoDB Compass.
+2. Click on **New Connection**.
+3. Paste the connection string from Step 2 into the connection string field.
+4. Click **Connect**.
 
-## **Step 3: Create a User and Database**
-1. Log in to the PostgreSQL prompt:
-   ```bash
-   sudo -u postgres psql
-   ```
-   (On Windows, use the `psql` command-line tool.)
+## Step 4: Explore Your Database
+Once connected, you can:
+- View collections and documents.
+- Run queries.
+- Analyze database performance.
+- Modify data.
 
-2. Create the `darbAdmin` user:
-   ```sql
-   CREATE USER darbAdmin WITH PASSWORD 'your_secure_password';
-   ```
-
-3. Create the `stagingdatabase` database:
-   ```sql
-   CREATE DATABASE stagingdatabase;
-   ```
-
-4. Grant privileges to `darbAdmin` on the `stagingdatabase` database:
-   ```sql
-   GRANT ALL PRIVILEGES ON DATABASE stagingdatabase TO darbAdmin;
-   ```
-
-5. Exit the PostgreSQL prompt:
-   ```sql
-   \q
-   ```
-
----
-
-## **Step 4: Import the `.sql` File**
-To import the `.sql` file into the `stagingdatabase` database:
-
-1. Ensure the `.sql` file is accessible on your local machine.
-   Example: The file is located at `/path/to/file.sql`.
-
-2. Use the following command to import the file:
-   ```bash
-   psql -U darbAdmin -d stagingdatabase -h localhost -p 5432 -f /path/to/file.sql
-   ```
-   - Replace `/path/to/file.sql` with the full path to your `.sql` file.
-   - Use the password for `darbAdmin` when prompted.
-
----
-
-## **Step 5: Verify the Import**
-1. Log in to the `stagingdatabase`:
-   ```bash
-   psql -U darbAdmin -d stagingdatabase -h localhost -p 5432
-   ```
-
-2. List the tables to verify the import:
-   ```sql
-   \dt
-   ```
-   This command lists all the tables in the database.
-
-3. Exit the PostgreSQL prompt:
-   ```sql
-   \q
-   ```
-
----
-
-## **Notes**
-- **Security**: Always use a strong password for the `darbAdmin` user.
-- Ensure the `.sql` file is properly formatted and does not contain syntax errors before importing.
-- If you encounter permission issues, check the PostgreSQL service and user permissions.
-
-Let me know if you have further questions!
-
+For further details on MongoDB Compass, refer to the [official documentation](https://www.mongodb.com/
