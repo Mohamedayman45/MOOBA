@@ -9,7 +9,7 @@ MongoDB Compass is a graphical user interface for MongoDB, allowing you to inter
 ## Step 2: Get Your Connection String
 You'll need a MongoDB connection string to connect MongoDB Compass to your database. Below is an example string you can use, but make sure to replace the placeholder values with the actual credentials for your database:
 
-mongodb+srv://username:password@cluster-name.mongodb.net/database-name?retryWrites=true&w=majority
+mongodb+srv://username:<password>@<cluster-name>.mongodb.net/database-name?retryWrites=true&w=majority
 
 ### Example Connection String
 Replace the `username`, `password`, `cluster-name`, and `database-name` with your specific database details.
