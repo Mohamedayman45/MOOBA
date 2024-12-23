@@ -1,6 +1,6 @@
 # Setting Up MongoDB Compass
 
-MongoDB Compass is a graphical user interface for MongoDB, allowing you to interact with your database in an easy and intuitive way. Follow the steps below to set up MongoDB Compass and connect to the database:
+MongoDB Compass is a graphical user interface for MongoDB, allowing you to interact with your database in an easy way. Follow the steps below to set up MongoDB Compass and connect to the database:
 
 ## Step 1: Install MongoDB Compass
 1. Download MongoDB Compass from the [official MongoDB website](https://www.mongodb.com/products/compass).
@@ -11,19 +11,9 @@ You'll need a MongoDB connection string to connect MongoDB Compass to your datab
 
 mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/<database-name>?retryWrites=true&w=majority
 
-javascript
-Copy code
-
 ### Example Connection String
 Replace the `<username>`, `<password>`, `<cluster-name>`, and `<database-name>` with your specific database details.
 
-For example:
-mongodb+srv://admin:password123@cluster0.mongodb.net/mydatabase?retryWrites=true&w=majority
-
-markdown
-Copy code
-
-> **Note:** If your database is not hosted on MongoDB Atlas (cloud), use the local connection string format provided by your setup.
 
 ## Step 3: Connect to Your Database
 1. Open MongoDB Compass.
